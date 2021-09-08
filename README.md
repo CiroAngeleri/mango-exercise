@@ -26,7 +26,10 @@ Runs unit tests.
 
 ### `yarn cy:run`
 
-Runs Cypress integration tests.
+Runs Cypress integration tests. This already runs the React Dev Server and after that the 
+Cypress tests so you don't need to run the server by yourself. 
+
+**MAKE SURE you don't have anything else running at port 3000.**
 
 ## TODOs
 - Improve styling.
