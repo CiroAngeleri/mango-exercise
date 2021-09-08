@@ -34,6 +34,7 @@ Cypress tests so you don't need to run the server by yourself.
 ## TODOs
 - Improve styling.
 - Ask UI/UX what should happen when the user types a number that is greater than the width of the input.
+- Add pipelines! 
 
 ## Learn More
 
