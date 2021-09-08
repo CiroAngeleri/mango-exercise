@@ -21,25 +21,30 @@ import {
 } from "./utils";
 import { RangeProps } from "./types";
 
-const INITIAL_START_PERCENTAGE = 0;
-const INITIAL_END_PERCENTAGE = 100;
-
-export const Range: FC<RangeProps> = ({ min, max, range = [] }) => {
+export const Range: FC<RangeProps> = ({ initialStartPercentage, initialEndPercentage, min, max, range = [] }) => {
   const initialMin = getInitialMin(range, min);
   const initialMax = getInitialMax(range, max);
 
-  const [minInputValue, setMinInputValue] = useState(initialMin);
-  const [maxInputValue, setMaxInputValue] = useState(initialMax);
+  const [minInputValue, setMinInputValue] = useState(0);
+  const [maxInputValue, setMaxInputValue] = useState(0);
+
+  useEffect(() => {
+    setMinInputValue(initialMin)
+  }, [initialMin])
+
+  useEffect(() => {
+    setMaxInputValue(initialMax)
+  }, [initialMax])
 
   const { initialThumbValue: initialStartThumbValue } = useInitialThumbValue(
-    INITIAL_START_PERCENTAGE,
+    initialStartPercentage,
     initialMin,
     initialMax,
     range
   );
 
   const { initialThumbValue: initialEndThumbValue } = useInitialThumbValue(
-    INITIAL_END_PERCENTAGE,
+    initialEndPercentage,
     initialMin,
     initialMax,
     range
@@ -202,12 +207,12 @@ export const Range: FC<RangeProps> = ({ min, max, range = [] }) => {
         <Slider ref={sliderRef}>
           <StartThumb
             data-testid="start-thumb"
-            style={{ left: percentageToPixels(INITIAL_START_PERCENTAGE) }}
+            style={{ left: percentageToPixels(initialStartPercentage) }}
             ref={startThumbRef}
             onMouseDown={handleMouseDownStartThumb}
           />
           <EndThumb
-            style={{ left: percentageToPixels(INITIAL_END_PERCENTAGE) }}
+            style={{ left: percentageToPixels(initialEndPercentage) }}
             ref={endThumbRef}
             onMouseDown={handleMouseDownEndThumb}
           />
