@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { Range } from "./components/Range";
+import "./index.css";
 
-function App() {
+export default function App() {
+  const [range, setRange] = useState([]);
+  useEffect(() => {
+    const fetchRange = async () => {
+      const response = await fetch("https://6137c185eac1410017c1847d.mockapi.io/range");
+      const data = await response.json();
+      setRange(data);
+    };
+    fetchRange();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Range min={5000} max={8000} />
+      <br />
+      <br />
+      <Range range={range} />
     </div>
   );
 }
-
-export default App;
