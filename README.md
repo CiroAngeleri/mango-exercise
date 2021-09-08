@@ -1,5 +1,7 @@
 # Mango Range Component Exercise
 
+I started this on CodeSandbox but then project escalated so I crated this repo, that's why there might be some missing commits.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Set up.
