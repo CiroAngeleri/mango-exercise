@@ -32,5 +32,6 @@ export const forceNumberBetweenLimits = ({ number, min, max }: Param) => {
   if (number > max) {
     return max;
   }
+
   return number;
 };
