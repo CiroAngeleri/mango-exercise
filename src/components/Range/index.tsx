@@ -21,7 +21,14 @@ import {
 } from "./utils";
 import { RangeProps } from "./types";
 
-export const Range: FC<RangeProps> = ({ initialStartPercentage, initialEndPercentage, min, max, range = [] }) => {
+export const Range: FC<RangeProps> = ({
+  initialStartPercentage,
+  initialEndPercentage,
+  min,
+  max,
+  range = [],
+  currencyLabel = '' 
+}) => {
   const initialMin = getInitialMin(range, min);
   const initialMax = getInitialMax(range, max);
 
@@ -203,7 +210,7 @@ export const Range: FC<RangeProps> = ({ initialStartPercentage, initialEndPercen
             }
             value={minInputValue}
           />
-          <span>€</span>
+          <span>{currencyLabel}</span>
         </MinRangeInputContainer>
 
         <Slider ref={sliderRef}>
@@ -229,7 +236,7 @@ export const Range: FC<RangeProps> = ({ initialStartPercentage, initialEndPercen
             }
             value={maxInputValue}
           />
-          <span>€</span>
+          <span>{currencyLabel}</span>
         </MaxRangeInputContainer>
       </Container>
     </div>

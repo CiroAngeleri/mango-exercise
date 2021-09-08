@@ -4,4 +4,5 @@ export interface RangeProps {
   range?: number[];
   initialStartPercentage: number;
   initialEndPercentage: number;
+  currencyLabel?: string;
 }

@@ -27,6 +27,7 @@ export default function App() {
               initialEndPercentage={80}
               min={5000}
               max={8000} 
+              currencyLabel="€"
             />
           </Route>
           <Route exact path="/exercise2">
@@ -35,6 +36,7 @@ export default function App() {
                   initialStartPercentage={20}
                   initialEndPercentage={70}
                   range={range}
+                  currencyLabel="€"
                 /> 
               : 'Loading...'
             }
