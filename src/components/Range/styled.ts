@@ -8,14 +8,17 @@ export const Container = styled.div`
 export const MinRangeInputContainer = styled.div`
   margin-right: 10px;
   display: flex;
+  align-items: center;
 `;
 export const MaxRangeInputContainer = styled.div`
-  margin-left: 30px;
+  margin-left: 10px;
   display: flex;
 `;
 
 export const RangeInput = styled.input`
-  width: 35px;
+  width: 34px;
+  margin-bottom: 1px;
+  text-align: right;
   outline: none;
   border: none;
   &:disabled {

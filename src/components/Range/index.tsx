@@ -205,9 +205,10 @@ export const Range: FC<RangeProps> = ({
           <RangeInput
             disabled={Boolean(range?.length)}
             type="number"
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setMinInputValue(parseFloat(e.target.value))
-            }
+              if (currentRef.current) currentRef.current.textContent = ''
+            }}
             value={minInputValue}
           />
           <span>{currencyLabel}</span>
@@ -231,9 +232,10 @@ export const Range: FC<RangeProps> = ({
           <RangeInput
             disabled={Boolean(range?.length)}
             type="number"
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) => {
               setMaxInputValue(parseFloat(e.target.value))
-            }
+              if (currentRef2.current) currentRef2.current.textContent = ''
+            }}
             value={maxInputValue}
           />
           <span>{currencyLabel}</span>
