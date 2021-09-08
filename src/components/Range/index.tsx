@@ -189,7 +189,9 @@ export const Range: FC<RangeProps> = ({ initialStartPercentage, initialEndPercen
   return (
     <div>
       <Header>
-        <span ref={currentRef}></span>-<span ref={currentRef2}></span>
+        <span ref={currentRef} data-testid="current-start-thumb-value"></span>
+          -
+        <span ref={currentRef2} data-testid="current-end-thumb-value"></span>
       </Header>
       <Container>
         <MinRangeInputContainer ref={minRangeInputRef}>
@@ -212,6 +214,7 @@ export const Range: FC<RangeProps> = ({ initialStartPercentage, initialEndPercen
             onMouseDown={handleMouseDownStartThumb}
           />
           <EndThumb
+            data-testid="end-thumb"
             style={{ left: percentageToPixels(initialEndPercentage) }}
             ref={endThumbRef}
             onMouseDown={handleMouseDownEndThumb}
