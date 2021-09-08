@@ -34,9 +34,10 @@ Cypress tests so you don't need to run the server by yourself.
 **MAKE SURE you don't have anything else running at port 3000.**
 
 ## TODOs
+- Try to simplify or abstract logic on the mousemove handler methods. They take a lot of space and are complex.
 - Improve styling.
 - Ask UI/UX what should happen when the user types a number that is greater than the width of the input.
-- Add pipelines! 
+- Add pipelines!
 
 ## Learn More
 
